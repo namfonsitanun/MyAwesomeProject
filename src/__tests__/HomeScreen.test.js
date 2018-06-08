@@ -1,5 +1,6 @@
 import React from 'react'
 import 'react-native'
+import { shallow } from 'enzyme'
 import HomeScreen from '../screen/HomeScreen.js'
 import renderer from 'react-test-renderer'
 
