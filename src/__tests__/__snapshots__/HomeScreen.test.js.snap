@@ -109,7 +109,7 @@ exports[`renders correctly 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "skyblue",
+            "backgroundColor": "grey",
             "borderRadius": 50,
             "height": 80,
             "justifyContent": "center",
@@ -146,7 +146,7 @@ exports[`renders correctly 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "skyblue",
+            "backgroundColor": "grey",
             "borderRadius": 50,
             "height": 80,
             "justifyContent": "center",

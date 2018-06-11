@@ -37,13 +37,13 @@ export default class HomeScreen extends React.Component {
     />
     <Count count={this.state.count} />
     <View style={styles.list}>
-      <TouchableOpacity onPress={() => this.handleIncrease()}>
+      <TouchableOpacity id="increase" onPress={() => this.handleIncrease()}>
         <View style={styles.item}>
           <Text>Increase</Text>
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => this.handleDecrease()}>
+      <TouchableOpacity id="decrease" onPress={() => this.handleDecrease()}>
         <View style={styles.item}>
           <Text>Decrease</Text>
         </View>
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   item: {
     width: 80,
     height: 80,
-    backgroundColor: 'skyblue',
+    backgroundColor: 'grey',
     margin: 20,
     justifyContent: 'center',
     alignItems: 'center',

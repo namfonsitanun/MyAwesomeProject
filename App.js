@@ -10,7 +10,7 @@ import {
   StyleSheet,
 } from 'react-native'
 import { createStackNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation'
-import { HomeScreen } from './src/screen/HomeScreen'
+import HomeScreen from './src/screen/HomeScreen'
 import { DetailsScreen } from './src/screen/DetailsScreen'
 import { ItemScreen } from './src/screen/ItemScreen'
 import { SelectSpaceScreen } from './src/screen/SelectSpaceScreen'
@@ -35,7 +35,7 @@ const RootStack = createStackNavigator(
     Details: DetailsScreen,
   },
   {
-    // initialRouteName: 'Home',
+    initialRouteName: 'Home',
   },
 )
 
@@ -44,10 +44,6 @@ const MyApp = createDrawerNavigator({
   Item: ItemScreen,
   SelectSpace: SelectSpaceScreen,
   ChangBackGround: ChangeBGScreen,
-})
-
-const styles = StyleSheet.create({
-
 })
 
 export default MyApp

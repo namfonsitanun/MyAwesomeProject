@@ -18,8 +18,8 @@ const ContentView = styled.View`
 
 const StyledText = styled.Text`
 	color: ${props => (props.color ? props.color : 'black')};
-	text-align: ${props => (props.position ? props.position : 'center')};
-	font-weight: ${props => (props.text == 'bold' ? 'bold' : 'normal')};
+	text-align: ${props => (props.position || 'center')};
+	font-weight: ${props => (props.text || 'normal')};
 `
 const Card = styled.View`
 	border-radius: 5px;
@@ -34,16 +34,16 @@ const Status = styled.View`
 	border-radius: 50;
 	width: 12px;
 	height: 12px;
-	background-color: ${props => (props.color ? props.color : 'red')};
+	background-color: ${props => (props.color || 'red')};
 `
 
 const Button = styled.TouchableOpacity`
-	justify-content: ${props => (props.position ? props.position : 'center')};
+	justify-content: ${props => (props.position || 'center')};
 	background-color: #f9253e;
 	color: white;
 	padding: 10px;
 	border-radius: 5px;
-	width: ${props => (props.width ? props.width : '325px')};
+	width: ${props => (props.width || '325px')};
 `
 
 export class SelectSpaceScreen extends React.Component {
