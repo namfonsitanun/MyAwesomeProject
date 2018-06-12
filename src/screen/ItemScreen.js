@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, Text, TextInput, Button, TouchableHighlight } from 'react-native'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 
-export class ItemScreen extends React.Component {
+export default class ItemScreen extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -14,65 +14,59 @@ export class ItemScreen extends React.Component {
     }
   }
 
-	Addjob = () => {
-	  this.state.item.job.push(this.state.text)
-	  // console.log(this.state.text, this.state.item);
+  Addjob = () => {
+    this.state.item.job.push(this.state.text)
+    // console.log(this.state.text, this.state.item);
 
-	  this.setState({
-	    // item: {
-	    // 	job: [...this.state.item.job, this.state.text],
-	    // },
-	    text: '',
-	  })
-	};
+    this.setState({
+      // item: {
+      // 	job: [...this.state.item.job, this.state.text],
+      // },
+      text: '',
+    })
+  }
 
-	Deljob = (index) => {
-	  // var jobs=Object.assign(this.state.item.job)
-	  // jobs.splice(index, 1);
-	  // this.setState({item:
-	  //     {
-	  //         job: jobs
-	  //     }
-	  // });
-	  this.setState({
-	    item: {
-	      job: this.state.item.job.filter((jobid, jobIndex) => {
-	        console.log(jobIndex)
-	        return jobIndex != index
-	      }),
-	    },
-	  })
-	  // console.log(index, this.state.item.job);
-	};
+  Deljob = (index) => {
+    // var jobs=Object.assign(this.state.item.job)
+    // jobs.splice(index, 1);
+    // this.setState({item:
+    //     {
+    //         job: jobs
+    //     }
+    // });
+    this.setState({
+      item: {
+        job: this.state.item.job.filter((jobid, jobIndex) => {
+          console.log(jobIndex)
+          return jobIndex !== index
+        }),
+      },
+    })
+    // console.log(index, this.state.item.job);
+  }
 
-	render() {
-	  return (
-  <View style={styles.container}>
-    <View style={styles.list}>
-      <TextInput
-        style={styles.inputbox}
-        placeholder="Input name"
-        onChangeText={text => this.setState({ text })}
-        value={this.state.text}
-      />
-      <Button title="Add" onPress={() => this.Addjob()} />
-    </View>
-    {/* <Text >{this.state.item.company}</Text> */}
-    {this.state.item.job.map((job, index) => (
-      <View style={styles.item} key={index}>
-        <Text style={styles.jobtitle}>{job}</Text>
-        <Button style={styles.jobbutton} color="red" title="Del" onPress={() => this.Deljob(index)} />
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.list}>
+          <TextInput
+            style={styles.inputbox}
+            placeholder="Input name"
+            onChangeText={text => this.setState({ text })}
+            value={this.state.text}
+          />
+          <Button title="Add" id="addjob" onPress={() => this.Addjob()} />
+        </View>
+        {/* <Text >{this.state.item.company}</Text> */}
+        {this.state.item.job.map((job, index) => (
+          <View style={styles.item} key={index}>
+            <Text style={styles.jobtitle}>{job}</Text>
+            <Button style={styles.jobbutton} color="red" title="Del" onPress={() => this.Deljob(index)} />
+          </View>
+        ))}
       </View>
-				))}
-  </View>
-	  )
-	}
-}
-
-ItemScreen.PropTypes = {
-  item: {
-    job: PropTypes.string,
-  },
+    )
+  }
 }
 
 const styles = StyleSheet.create({

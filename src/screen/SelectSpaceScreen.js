@@ -39,83 +39,82 @@ const Status = styled.View`
 const Button = styled.TouchableOpacity`
   justify-content: ${props => props.position || 'center'};
   background-color: #f9253e;
-  color: white;
   padding: 10px;
   border-radius: 5px;
   width: ${props => props.width || '325px'};
 `
 
-export class SelectSpaceScreen extends React.Component {
+export default class SelectSpaceScreen extends React.Component {
   constructor(props) {
     super(props)
   }
 
   static navigationOptions = {
-    title: 'Select Space'
+    title: 'Select Space',
   }
 
   render() {
     const pic = {
-      url: 'https://www.w3schools.com/howto/img_paris.jpg'
+      url: 'https://www.w3schools.com/howto/img_paris.jpg',
     }
     return (
       <StyledView>
-        <Button title="+ New Space" width="150px">
-          <StyledText color="white" text="bold">
+        <Button width="150px">
+      <StyledText color="white" text="bold">
             + New Space
-          </StyledText>
-        </Button>
+      </StyledText>
+    </Button>
         <ContentView>
-          <Card>
-            <View
-              style={{
+      <Card>
+        <View
+          style={{
                 flexDirection: 'row',
                 margin: 5,
-                backgroundColor: 'white'
+                backgroundColor: 'white',
               }}
-            >
-              <StyledText position="left">Travel</StyledText>
-              <View
-                style={{
+        >
+          <StyledText position="left">Travel</StyledText>
+          <View
+            style={{
                   flex: 1,
                   flexDirection: 'row',
-                  justifyContent: 'flex-end'
+                  justifyContent: 'flex-end',
                 }}
-              >
-                <Status color="red" />
-              </View>
-            </View>
-            <Image source={pic} style={{ width: 100, height: 75 }} />
-          </Card>
-          <Card>
-            <View
-              style={{
-                flexDirection: 'row',
-                margin: 5,
-                backgroundColor: 'white'
-              }}
-            >
-              <StyledText position="left">Travel</StyledText>
-              <View
-                style={{
-                  flex: 1,
-                  flexDirection: 'row',
-                  justifyContent: 'flex-end'
-                }}
-              >
-                <Status color="orange" />
-              </View>
-            </View>
-            <Image source={pic} style={{ width: 100, height: 75 }} />
-          </Card>
-        </ContentView>
-        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-          <Button>
-            <StyledText color="white" text="bold">
-              1 steps to go >
-            </StyledText>
-          </Button>
+          >
+            <Status color="red" />
+          </View>
         </View>
+        <Image source={pic} style={{ width: 100, height: 75 }} />
+      </Card>
+      <Card>
+        <View
+          style={{
+                flexDirection: 'row',
+                margin: 5,
+                backgroundColor: 'white',
+              }}
+        >
+          <StyledText position="left">Travel</StyledText>
+          <View
+            style={{
+                  flex: 1,
+                  flexDirection: 'row',
+                  justifyContent: 'flex-end',
+                }}
+          >
+            <Status color="orange" />
+          </View>
+        </View>
+        <Image source={pic} style={{ width: 100, height: 75 }} />
+      </Card>
+    </ContentView>
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+      <Button>
+        <StyledText color="white" text="bold">
+              1 steps to go >
+        </StyledText>
+      </Button>
+    </View>
       </StyledView>
     )
   }

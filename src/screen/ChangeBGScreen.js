@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, TextInput } from 'react-native'
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 
-const Box = styled.View`
+export const Box = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -14,19 +14,18 @@ export default class ChangeBGScreen extends React.Component {
     super()
 
     this.state = {
-      bgcolor: '#FFFFFF'
+      bgcolor: '#FFFFFF',
     }
   }
 
   render() {
-    const { bgcolor } = this.props
-    const bgChange = bgcolor
-
     return (
-      <Box color={this.state.bgcolor}>
+      <Box id="box" color={this.state.bgcolor}>
         <TextInput
+          id="text"
           style={styles.input}
-          onChangeText={bgcolor => this.setState({ bgcolor: bgChange })}
+          placeholder="Input color"
+          onChangeText={bgcolor => this.setState({ bgcolor })}
         />
       </Box>
     )
@@ -42,6 +41,6 @@ const styles = StyleSheet.create({
   //   backgroundColor: color
   // },
   input: {
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 })

@@ -10,13 +10,13 @@ export default class HomeScreen extends React.Component {
     }
   }
 
-	// componentWillReceiveProps() {
-	// }
+  // componentWillReceiveProps() {
+  // }
 
-	handleIncrease = () => {
+  handleIncrease = () => {
 	  console.log('handleIncrease')
 	  this.setState({ count: this.state.count + 1 })
-	};
+  };
 
 	handleDecrease = () => {
 	  console.log('handleIncrease')
@@ -37,13 +37,13 @@ export default class HomeScreen extends React.Component {
     />
     <Count count={this.state.count} />
     <View style={styles.list}>
-      <TouchableOpacity id="increase" onPress={() => this.handleIncrease()}>
+      <TouchableOpacity id="increase" onPress={this.handleIncrease}>
         <View style={styles.item}>
           <Text>Increase</Text>
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity id="decrease" onPress={() => this.handleDecrease()}>
+      <TouchableOpacity id="decrease" onPress={this.handleDecrease}>
         <View style={styles.item}>
           <Text>Decrease</Text>
         </View>

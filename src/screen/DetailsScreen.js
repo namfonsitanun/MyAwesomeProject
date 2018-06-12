@@ -5,13 +5,12 @@ import { createStackNavigator } from 'react-navigation'
 export default class DetailsScreen extends React.Component {
   static navigationOptions = {
     title: 'Details',
-    headerRight: (
-      <Button onPress={() => alert('This is a button!')} title="Click" />
-    )
+    headerRight: <Button onPress={() => alert('This is a button!')} title="Click" />,
   }
 
   render() {
     const { navigation } = this.props
+    // console.log(navigation)
     const count = navigation.getParam('count')
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -26,6 +25,6 @@ export default class DetailsScreen extends React.Component {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 48
-  }
+    fontSize: 48,
+  },
 })
