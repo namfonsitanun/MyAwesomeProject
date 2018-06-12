@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import { View, StyleSheet, Text, TextInput, Button, TouchableHighlight } from 'react-native'
-import propTypes from 'prop-types'
+import React from 'react'
+import { View, StyleSheet, Text, TextInput, Button } from 'react-native'
 
 export default class ItemScreen extends React.Component {
   constructor(props) {
@@ -8,41 +7,41 @@ export default class ItemScreen extends React.Component {
     this.state = {
       item: {
         company: 'thinknet',
-        job: ['1', '2', '3'],
+        jobs: ['1', '2', '3'],
       },
       text: '',
     }
   }
 
   Addjob = () => {
-    this.state.item.job.push(this.state.text)
+    // this.state.item.jobs.push(this.state.text)
     // console.log(this.state.text, this.state.item);
 
     this.setState({
-      // item: {
-      // 	job: [...this.state.item.job, this.state.text],
-      // },
+      item: {
+        jobs: [...this.state.item.jobs, this.state.text],
+      },
       text: '',
     })
   }
 
   Deljob = (index) => {
-    // var jobs=Object.assign(this.state.item.job)
-    // jobs.splice(index, 1);
+    // var job=Object.assign(this.state.item.jobs)
+    // job.splice(index, 1);
     // this.setState({item:
     //     {
-    //         job: jobs
+    //         jobs: job
     //     }
     // });
     this.setState({
       item: {
-        job: this.state.item.job.filter((jobid, jobIndex) => {
+        jobs: this.state.item.jobs.filter((jobid, jobIndex) => {
           console.log(jobIndex)
           return jobIndex !== index
         }),
       },
     })
-    // console.log(index, this.state.item.job);
+    // console.log(index, this.state.item.jobs);
   }
 
   render() {
@@ -55,13 +54,18 @@ export default class ItemScreen extends React.Component {
             onChangeText={text => this.setState({ text })}
             value={this.state.text}
           />
-          <Button title="Add" id="addjob" onPress={() => this.Addjob()} />
+          <Button title="Add" id="addjob" onPress={this.Addjob} />
         </View>
         {/* <Text >{this.state.item.company}</Text> */}
-        {this.state.item.job.map((job, index) => (
-          <View style={styles.item} key={index}>
+        {this.state.item.jobs.map((job, index) => (
+          <View style={styles.item}>
             <Text style={styles.jobtitle}>{job}</Text>
-            <Button style={styles.jobbutton} color="red" title="Del" onPress={() => this.Deljob(index)} />
+            <Button
+              style={styles.jobbutton}
+              color="red"
+              title="Del"
+              onPress={() => this.Deljob(index)}
+            />
           </View>
         ))}
       </View>

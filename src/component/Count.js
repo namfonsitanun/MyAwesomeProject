@@ -1,19 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import PropTypes from 'prop-types'
 
-export class Count extends Component {
-  // componentWillReceiveProps(nextPorps) {
-  // 	console.log('naxtPorps', nextPorps.count);
-  // 	console.log('this props', this.props.count);
-  // }
+const Count = props => (
+  <View>
+    <Text style={styles.title}>{props.count}</Text>
+  </View>
+)
 
-  render() {
-    return (
-      <View>
-        <Text style={styles.title}>{this.props.count}</Text>
-      </View>
-    )
-  }
+
+Count.defaultProps = {
+  count: 0,
+}
+
+Count.propTypes = {
+  count: PropTypes.number,
 }
 
 const styles = StyleSheet.create({
@@ -26,3 +27,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 })
+
+export default Count

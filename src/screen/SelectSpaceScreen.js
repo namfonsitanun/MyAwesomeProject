@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components/native'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, View } from 'react-native'
 
 const StyledView = styled.View`
   flex: 1;
@@ -44,11 +44,7 @@ const Button = styled.TouchableOpacity`
   width: ${props => props.width || '325px'};
 `
 
-export default class SelectSpaceScreen extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
+class SelectSpaceScreen extends React.Component {
   static navigationOptions = {
     title: 'Select Space',
   }
@@ -60,62 +56,64 @@ export default class SelectSpaceScreen extends React.Component {
     return (
       <StyledView>
         <Button width="150px">
-      <StyledText color="white" text="bold">
+          <StyledText color="white" text="bold">
             + New Space
-      </StyledText>
-    </Button>
+          </StyledText>
+        </Button>
         <ContentView>
-      <Card>
-        <View
-          style={{
+          <Card>
+            <View
+              style={{
                 flexDirection: 'row',
                 margin: 5,
                 backgroundColor: 'white',
               }}
-        >
-          <StyledText position="left">Travel</StyledText>
-          <View
-            style={{
+            >
+              <StyledText position="left">Travel</StyledText>
+              <View
+                style={{
                   flex: 1,
                   flexDirection: 'row',
                   justifyContent: 'flex-end',
                 }}
-          >
-            <Status color="red" />
-          </View>
-        </View>
-        <Image source={pic} style={{ width: 100, height: 75 }} />
-      </Card>
-      <Card>
-        <View
-          style={{
+              >
+                <Status color="red" />
+              </View>
+            </View>
+            <Image source={pic} style={{ width: 100, height: 75 }} />
+          </Card>
+          <Card>
+            <View
+              style={{
                 flexDirection: 'row',
                 margin: 5,
                 backgroundColor: 'white',
               }}
-        >
-          <StyledText position="left">Travel</StyledText>
-          <View
-            style={{
+            >
+              <StyledText position="left">Travel</StyledText>
+              <View
+                style={{
                   flex: 1,
                   flexDirection: 'row',
                   justifyContent: 'flex-end',
                 }}
-          >
-            <Status color="orange" />
-          </View>
-        </View>
-        <Image source={pic} style={{ width: 100, height: 75 }} />
-      </Card>
-    </ContentView>
+              >
+                <Status color="orange" />
+              </View>
+            </View>
+            <Image source={pic} style={{ width: 100, height: 75 }} />
+          </Card>
+        </ContentView>
         <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-      <Button>
-        <StyledText color="white" text="bold">
+          <Button>
+            <StyledText color="white" text="bold">
               1 steps to go >
-        </StyledText>
-      </Button>
-    </View>
+            </StyledText>
+          </Button>
+        </View>
       </StyledView>
     )
   }
 }
+
+export default SelectSpaceScreen

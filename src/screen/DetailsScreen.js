@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import { View, StyleSheet, Text, Button, Alert } from 'react-native'
-import { createStackNavigator } from 'react-navigation'
+import React from 'react'
+import { View, StyleSheet, Text, Button } from 'react-native'
 
 export default class DetailsScreen extends React.Component {
   static navigationOptions = {

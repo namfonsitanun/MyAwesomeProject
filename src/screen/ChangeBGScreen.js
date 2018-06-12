@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { View, StyleSheet, TextInput } from 'react-native'
+import React from 'react'
+import { StyleSheet, TextInput } from 'react-native'
 import styled from 'styled-components/native'
 
 export const Box = styled.View`

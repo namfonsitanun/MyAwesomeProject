@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { View, StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-native'
-import { Count } from '../component/Count.js'
+import React from 'react'
+import { View, StyleSheet, Text, Button, TouchableOpacity } from 'react-native'
+import Count from '../component/Count'
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
@@ -14,44 +14,44 @@ export default class HomeScreen extends React.Component {
   // }
 
   handleIncrease = () => {
-	  console.log('handleIncrease')
-	  this.setState({ count: this.state.count + 1 })
+    console.log('handleIncrease')
+    this.setState({ count: this.state.count + 1 })
   };
 
-	handleDecrease = () => {
-	  console.log('handleIncrease')
-	  this.setState({ count: this.state.count - 1 })
-	};
+  handleDecrease = () => {
+    console.log('handleIncrease')
+    this.setState({ count: this.state.count - 1 })
+  };
 
-	render() {
-	  return (
-  <View style={styles.container}>
-    <Text>Home Screen</Text>
-    <Button
-      title="Go to Detail"
-      onPress={() =>
-						this.props.navigation.navigate('Details', {
-							count: this.state.count,
-						})
-					}
-    />
-    <Count count={this.state.count} />
-    <View style={styles.list}>
-      <TouchableOpacity id="increase" onPress={this.handleIncrease}>
-        <View style={styles.item}>
-          <Text>Increase</Text>
-        </View>
-      </TouchableOpacity>
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Home Screen</Text>
+        <Button
+          title="Go to Detail"
+          onPress={() =>
+              this.props.navigation.navigate('Details', {
+                count: this.state.count,
+              })
+        }
+        />
+        <Count count={this.state.count} />
+        <View style={styles.list}>
+          <TouchableOpacity id="decrease" onPress={this.handleDecrease}>
+            <View style={styles.item}>
+              <Text>Decrease</Text>
+            </View>
+          </TouchableOpacity>
 
-      <TouchableOpacity id="decrease" onPress={this.handleDecrease}>
-        <View style={styles.item}>
-          <Text>Decrease</Text>
+          <TouchableOpacity id="increase" onPress={this.handleIncrease}>
+            <View style={styles.item}>
+              <Text>Increase</Text>
+            </View>
+          </TouchableOpacity>
         </View>
-      </TouchableOpacity>
-    </View>
-  </View>
-	  )
-	}
+      </View>
+    )
+  }
 }
 const styles = StyleSheet.create({
   container: {
